@@ -1,6 +1,6 @@
 
 
-const leftSidenav = () => {
+const LeftSidenav = () => {
   return (
     <div>
       <h2 className="text-2xl">left leftSidenav</h2>
@@ -8,4 +8,4 @@ const leftSidenav = () => {
   );
 };
 
-export default leftSidenav;
+export default LeftSidenav;
