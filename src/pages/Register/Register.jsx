@@ -1,28 +1,28 @@
-import  { useContext } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
 
-  const {createUser}=useContext(AuthContext)
+  const { createUser } = useContext(AuthContext)
 
   const handelRegister = e => {
     e.preventDefault()
-    const form =new FormData(e.currentTarget)
-    const email =form.get('email')
-    const photo =form.get('photo')
-    const name =form.get('name')
+    const form = new FormData(e.currentTarget)
+    const email = form.get('email')
+    const photo = form.get('photo')
+    const name = form.get('name')
     const password = form.get('password')
-    console.log(email,password,photo,name)
+    console.log(email, password, photo, name)
 
-    createUser(email,password)
-    .then(result =>{
-      console.log(result.user)
-    })
-    .catch(error =>{
-      console.log(error)
-    })
+    createUser(email, password)
+      .then(result => {
+        console.log(result.user)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
   return (
     <div>
@@ -30,7 +30,7 @@ const Register = () => {
 
       <div>
         <h2 className="text-3xl my-10 text-center">Please Register</h2>
-        <form onSubmit={ handelRegister} className="lg:w-1/2 md:w-3/4 mx-auto">
+        <form onSubmit={handelRegister} className="lg:w-1/2 md:w-3/4 mx-auto">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -59,7 +59,7 @@ const Register = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button  type="submit" className="btn btn-primary">Register</button>
+            <button type="submit" className="btn btn-primary">Register</button>
           </div>
         </form>
         <p className="text-center">Already have account <Link to='/login' className="text-blue-400">Login</Link></p>
